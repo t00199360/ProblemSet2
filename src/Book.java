@@ -11,14 +11,17 @@ public class Book
     {
         this.title=title;
     }
+
     public void setPrice(double price)
     {
         this.price=price;
     }
+
     public void setISBN(String ISBN)
     {
         this.ISBN=ISBN;
     }
+
     public void setPages(int pages)
     {
         this.pages=pages;

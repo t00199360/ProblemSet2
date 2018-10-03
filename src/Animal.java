@@ -2,8 +2,11 @@ public class Animal
 {
     private String type;
     private String [] continents = new String [7];
+  //  Animal continents =new Animal(new String[]);
     private double weight;
     private int age;
+
+    //mutator methods
 
     public void setAge(int age)
     {
@@ -25,6 +28,8 @@ public class Animal
         this.weight = weight;
     }
 
+    //accessor methods
+
     public double getWeight()
     {
         return weight;
@@ -44,6 +49,8 @@ public class Animal
     {
         return continents;
     }
+
+    //constructor methods
 
     public Animal()
     {
