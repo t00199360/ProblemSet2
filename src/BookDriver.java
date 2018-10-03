@@ -4,9 +4,11 @@ public class BookDriver
 {
     public static void main(String[] args)
     {
+        String ISBNdisplay=JOptionPane.showInputDialog("Please enter the ISBN of the book");
+
         Book Liam = new Book();
         Book Modestas = new Book();
-        Liam.setISBN("asdfadas556");
+        Liam.setISBN(ISBNdisplay);
         Liam.setPages(16);
         Liam.setPrice(69.00);
         Liam.setTitle("Modestas is a latvian spy");
