@@ -8,8 +8,6 @@
 * calculate the distance from the origin point by using the pythagorean theorem
 * driver should test all functionality of the class*/
 
-import javax.swing.*;
-
 public class MyPoint
 {
     private double xVal;
@@ -64,21 +62,20 @@ public class MyPoint
                 "\nY-Value: " + getyVal();
     }
 
-    public double moveVertically(double yUnits)
+    //moving the points of the x and y coordinates
+    public void  moveVertically(double yUnits)
     {
         this.yVal+=yUnits;
-        return yUnits;
     }
-    public double moveHorizontally(double xUnits)
+    public void moveHorizontally(double xUnits)
     {
         this.xVal+=xUnits;
-        return xUnits;
     }
-    public double translatePosition(double yUnits, double xUnits)
+    public void translatePosition(double xUnits, double yUnits)
     {
-        moveHorizontally(xUnits);
-        moveVertically(yUnits);
-        return;
+        this.moveHorizontally(xUnits);
+        this.moveVertically(yUnits);
     }
+
 
 }

@@ -1,7 +1,6 @@
 import javax.swing.*;
 
-public class MyPointDriver
-{
+public class MyPointDriver {
     public static void main(String[] args) {
         String XAsString = JOptionPane.showInputDialog(null, "Please enter your x-coordinate");
         String YAsString = JOptionPane.showInputDialog(null, "Please enter your y-coordinate");
@@ -13,20 +12,54 @@ public class MyPointDriver
 
         JOptionPane.showMessageDialog(null, firstPoint);
 
-        MyPoint myPoint= new MyPoint(askForX,askForY);
+        MyPoint myPoint = new MyPoint(askForX, askForY);
 
         JOptionPane.showMessageDialog(null, myPoint);
 
-        firstPoint.setxVal(-6);
-        firstPoint.setyVal(10);
+        //firstPoint.setxVal(-6);
+        // firstPoint.setyVal(10);
 
-        JOptionPane.showMessageDialog(null, firstPoint);
+        String newXAsString = JOptionPane.showInputDialog(null, "Please enter the value you wish to change your x coordinate by: ");
+        String newYAsString = JOptionPane.showInputDialog(null, "Please enter the value you wish to change your y coordinate by: ");
 
+        double newXAsDouble = Double.parseDouble(newXAsString);
+        double newYAsDouble = Double.parseDouble(newYAsString);
 
+        myPoint.moveHorizontally(newXAsDouble);
+        myPoint.moveVertically(newYAsDouble);
 
+        String askTranslate = JOptionPane.showInputDialog("Do you want to adjust your position?");
+
+        if (askTranslate.equals("y")) {
+            myPoint.translatePosition(Double.parseDouble(JOptionPane.showInputDialog("Please enter the value you wish to change your x coordinate by: ")), Double.parseDouble(JOptionPane.showInputDialog("Please enter the value you wish to change your y coordinate by: ")));
+
+        }
+        JOptionPane.showMessageDialog(null, myPoint);
+        // double originx = 0;
+        //double originy = 0;
+
+        //originx += newXAsDouble;
+        //originy += newYAsDouble;
+
+        double distanceX = askForX * askForX;
+        double distanceY = askForY * askForY;
+
+        if (newXAsDouble != 0)
+        {
+            double distanceX2 = askForX * askForX;
+            double distanceY2 = askForY * askForY;
+            double distanceHSquared = distanceX2 + distanceY2;
+            double distanceTotal = Math.sqrt(distanceHSquared);
+            JOptionPane.showMessageDialog(null, "The points you entered are " + distanceTotal + " from  the origin");
+        }
+        else
+            {
+            double distanceHSquared = distanceX + distanceY;
+            double distanceTotal = Math.sqrt(distanceHSquared);
+            JOptionPane.showMessageDialog(null, "The points you entered are " + distanceTotal + " from  the origin");
+            }
     }
-
-
+}
         /*moveHorizontally(XAsString,askForX);
         moveVertically(YAsString,askForY);
 
@@ -90,7 +123,6 @@ public class MyPointDriver
 
         return distanceOriginY;
     }*/
-    }
 
 
 /*
